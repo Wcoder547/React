@@ -4,9 +4,18 @@ import App from "./App.jsx";
 import Chai from "./components/Chai.jsx";
 import "./index.css";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <App />
-    <Chai />
-  </React.StrictMode>
+const anotherElem = (
+  <a href="https://google.com" target="_blank">
+    click to visit google
+  </a>
 );
+
+const createElem = React.createElement(
+  "a",
+  {
+    href: "https://google.com",
+    target: "_blank",
+  },
+  "click to visit google"
+);
+ReactDOM.createRoot(document.getElementById("root")).render(createElem);
